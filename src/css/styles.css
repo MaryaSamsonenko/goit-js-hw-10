@@ -33,22 +33,20 @@ ul {
   border: 4px solid rgb(12, 192, 192);
   box-shadow: 0px 3px 4px rgb(194, 192, 192), -4px 3px 6px rgb(194, 192, 192),
     4px 3px 6px rgb(194, 192, 192);
-  /* border-color: ; */
 }
 .country-list {
   width: 332px;
   margin: 0 auto;
-  padding: 16px;
 }
 .card-item {
+  padding-left: 16px;
+  padding-right: 16px;
   box-shadow: 0px 3px 4px rgb(194, 192, 192), -4px 3px 6px rgb(194, 192, 192),
     4px 3px 6px rgb(194, 192, 192);
 }
 .card-item {
   display: flex;
   align-items: center;
-  /* width: 400px; */
-  /* justify-content: center; */
 }
 .country-title {
   font-weight: 600;
