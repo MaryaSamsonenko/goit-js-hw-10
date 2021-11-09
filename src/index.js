@@ -41,15 +41,14 @@ function addListMarkup(countries) {
   const markupPreview = countries.reduce(
     (acc, { name, capital, population, flags, languages }) =>
       acc +
-      `<li>
-    <img
-      class="country__image"
-      src="${flags.svg}"
+      `<li class='card-item'>
+    <img class="country-image"
       alt="${name.official}"
       width="40px"
       height='24px'
-    />
-    <h2>${name.official}</h2>
+      src="${flags.svg}"/>
+         
+    <h2 class="country-title">${name.official}</h2>
     
   </li>
 `,
@@ -67,18 +66,18 @@ function addCardMarkup(countries) {
   const markupPreview = countries.reduce(
     (acc, { name, capital, population, flags, languages }) =>
       acc +
-      `<div>
+      `<div class="wrapper-card">
     <img
-      class="country__image"
+      class="country-image-one"
       src="${flags.svg}"
       alt="${name.official}"
-      width="400px"
-      height='240px'
+      width="300px"
+      height='200px'
     />
-    <h2>${name.official}</h2>
-    <p>${capital}</p>
-    <p>${population}</p>
-    <p>${languagesValue}</p>
+    <h2 class='wrapper-card-title'>${name.official}</h2>
+    <p class='wrapper-card-text'>Capital: ${capital}</p>
+    <p class='wrapper-card-text'>Population: ${population}</p>
+    <p class='wrapper-card-text'>Languages: ${languagesValue}</p>
   </div>
 `,
     '',
