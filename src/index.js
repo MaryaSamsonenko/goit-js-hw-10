@@ -3,15 +3,19 @@ import debounce from 'lodash.debounce';
 import { fetchCountry } from './services/api';
 import Notiflix from 'notiflix';
 
-const DEBOUNCE_DELAY = 300;
+const DEBOUNCE_DELAY = 600;
 const searchboxEl = document.querySelector('#search-box');
 const profileListEl = document.querySelector('.country-list');
 const profileContainerEl = document.querySelector('.country-info');
-console.log(searchboxEl);
 
 searchboxEl.addEventListener(
   'input',
   debounce(() => {
+    if (searchboxEl.value === '') {
+      clearMarkup();
+      return;
+    }
+    clearMarkup();
     fetchCountry(searchboxEl.value)
       .then(countrydata => checkCountriesLehgth(countrydata))
       .catch(Notiflix.Notify.failure);
@@ -20,6 +24,7 @@ searchboxEl.addEventListener(
 
 function clearMarkup() {
   profileListEl.innerHTML = '';
+  profileContainerEl.innerHTML = '';
 }
 
 function checkCountriesLehgth(countries) {
@@ -28,7 +33,7 @@ function checkCountriesLehgth(countries) {
   } else if (countries.length >= 2 && countries.length <= 10) {
     addListMarkup(countries);
   } else if (countries.length === 1) {
-    clearMarkup();
+    // clearMarkup();
     addCardMarkup(countries);
   }
 }
@@ -57,7 +62,8 @@ function showListMarkup(markup) {
 }
 
 function addCardMarkup(countries) {
-  //   const languagesValue = countries.map(({ languages }) => Object.values(languages)).join(' ');
+  const languagesValue = Object.values(countries[0].languages).join(',' + ' ');
+
   const markupPreview = countries.reduce(
     (acc, { name, capital, population, flags, languages }) =>
       acc +
@@ -72,7 +78,7 @@ function addCardMarkup(countries) {
     <h2>${name.official}</h2>
     <p>${capital}</p>
     <p>${population}</p>
-    <p>${Object.values(languages)}</p>
+    <p>${languagesValue}</p>
   </div>
 `,
     '',
