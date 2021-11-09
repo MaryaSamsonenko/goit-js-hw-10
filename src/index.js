@@ -42,7 +42,7 @@ function addListMarkup(countries) {
   const markupPreview = countries.reduce(
     (acc, { name, capital, population, flags, languages }) =>
       acc +
-      `<li class='card-item animate__animated animate__slideInUp'>
+      `<li class='card-item animate__animated animate__fadeInUp'>
     <img class="country-image"
       alt="${name.official}"
       width="40px"
