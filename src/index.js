@@ -2,6 +2,7 @@ import './css/styles.css';
 import debounce from 'lodash.debounce';
 import { fetchCountry } from './services/api';
 import Notiflix from 'notiflix';
+import 'animate.css';
 
 const DEBOUNCE_DELAY = 600;
 const searchboxEl = document.querySelector('#search-box');
@@ -41,7 +42,7 @@ function addListMarkup(countries) {
   const markupPreview = countries.reduce(
     (acc, { name, capital, population, flags, languages }) =>
       acc +
-      `<li class='card-item'>
+      `<li class='card-item animate__animated animate__slideInUp'>
     <img class="country-image"
       alt="${name.official}"
       width="40px"
@@ -66,7 +67,7 @@ function addCardMarkup(countries) {
   const markupPreview = countries.reduce(
     (acc, { name, capital, population, flags, languages }) =>
       acc +
-      `<div class="wrapper-card">
+      `<div class="wrapper-card animate__animated animate__slideInUp">
     <img
       class="country-image-one"
       src="${flags.svg}"
