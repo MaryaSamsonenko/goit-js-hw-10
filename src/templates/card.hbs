@@ -1,0 +1,20 @@
+<div class='wrapper-card animate__animated animate__slideInUp'>
+  <img
+    class='country-image-one'
+    src='{{flags.svg}}'
+    alt='{{name.official}}'
+    width='300px'
+    height='200px'
+  />
+  <h2 class='wrapper-card-title'>{{name.official}}</h2>
+  <p class='wrapper-card-text'>Capital: {{capital}}</p>
+  <p class='wrapper-card-text'>Population: {{population}}</p>
+  <p class='wrapper-card-text'>Languages:
+    {{#each languages}}
+      {{#if @last}}
+        <span>{{this}}</span>
+      {{else}}
+        <span>{{this}},</span>
+      {{/if}}
+    {{/each}}</p>
+</div>

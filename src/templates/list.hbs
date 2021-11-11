@@ -1,0 +1,13 @@
+{{#each this}}
+
+  <li class='card-item animate__animated animate__fadeInUp'>
+    <img
+      class='country-image'
+      alt='{{name.official}}'
+      width='40px'
+      height='24px'
+      src='{{flags.svg}}'
+    />
+    <h2 class='country-title'>{{name.official}}</h2>
+  </li>
+{{/each}}

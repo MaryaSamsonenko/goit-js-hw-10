@@ -28,6 +28,7 @@
   "dependencies": {
     "animate.css": "^4.1.1",
     "lodash.debounce": "^4.0.8",
-    "notiflix": "^3.2.2"
+    "notiflix": "^3.2.2",
+    "s": "^1.0.0"
   }
 }
